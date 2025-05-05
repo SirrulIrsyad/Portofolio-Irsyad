@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Sirrul Irsyad | Portfolio</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    /* RESET */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+    a { color: #4a3fff; text-decoration: none; transition: color .3s; }
+    a:hover { color: #3620e0; }
+
+    /* NAVBAR */
+    header { position: fixed; top: 0; width: 100%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+    .nav-container { max-width: 1000px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem; }
+    .logo { font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: 1.5rem; color: #4a3fff; }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav li { } 
+    nav a.active { border-bottom: 2px solid #4a3fff; padding-bottom: 2px; }
+
+    /* HERO */
+    .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #fff url('hero-bg.svg') no-repeat center/cover; text-align: center; padding: 0 1rem; }
+    .hero h1 { font-size: 3rem; font-weight: 600; color: #3620e0; }
+    .hero p { font-size: 1.2rem; margin-top: .5rem; color: #555; }
+    .hero .btn { margin-top: 1.5rem; padding: .75rem 1.5rem; background: #4a3fff; color: #fff; border-radius: 5px; font-weight: 600; }
+
+    /* SECTIONS */
+    .section { max-width: 1000px; margin: 4rem auto; padding: 0 1rem; }
+    .section h2 { font-size: 2rem; color: #3620e0; margin-bottom: 1rem; }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.about img { width: 250px; border-radius: 0; border: 4px solid #4a3fff; object-fit: cover; }
+    .about p { color: #555; }
+
+    /* FEATURES */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
+    .card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: transform .3s; cursor: pointer; }
+    .card:hover { transform: translateY(-5px) scale(1.05); }
+    .card h3 { font-size: 1.2rem; margin-bottom: .5rem; color: #4a3fff; }
+
+    /* RESUME BUTTON */
+    .resume-btn { display: inline-block; margin-top: 1rem; padding: .75rem 1.5rem; background: #3620e0; color: #fff; border-radius: 5px; font-weight: 600; transition: transform 0.3s ease; }
+    .resume-btn:hover { transform: translateY(-5px); }
+
+
+    /* CONTACT */
+    .contact-info p { margin-bottom: .5rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem 1rem; background: #fff; color: #777; font-size: .9rem; }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){ .about { grid-template-columns: 1fr; text-align: center; } nav ul { display: none; } }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px -100px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add('appear');
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Irsyad</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero fade-in">
+    <h1>Muhammad Sirrul Irsyad</h1>
+    <p>Aspiring AI Engineer & Economist | Innovative Problem Solver</p>
+    <a href="#projects" class="btn">See My Work</a>
+  </section>
+
+  <section id="about" class="section about fade-in">
+<img src="https://i.imgur.com/UAj11Vn.jpeg" alt="Muhammad Sirrul Irsyad Profile Photo">
+    <div>
+      <h2>About Me</h2>
+      <p>Hi, I'm Irsyad, a 18-year-old high school senior passionate about AI engineering and economic research. I've led product innovation projects like <strong>Adis</strong> (an automatic soap dispenser) and developed digital marketing campaigns as a <strong>Shopee Affiliate Team Leader</strong>. I aim to leverage technology for social impact and global competitiveness.</p>
+<a href="CV Muhammad Sirrul Irsyad.pdf" download class="resume-btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="skills" class="section fade-in">
+    <h2>Skills & Expertise</h2>
+    <div class="features-grid">
+      <div class="card"><h3>AI & ML</h3><p>Building small-scale AI models and understanding algorithms.</p></div>
+      <div class="card"><h3>Product Innovation</h3><p>Designed and prototyped Adis, an automated dispenser promoting hygiene.</p></div>
+      <div class="card"><h3>Digital Marketing</h3><p>Executed affiliate campaigns generating measurable ROI.</p></div>
+      <div class="card"><h3>Information Systems</h3><p>Knowledge in system analysis and basic database management.</p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section fade-in">
+    <h2>Key Projects</h2>
+    <div class="features-grid">
+      <div class="card"><h3>Adis Innovation</h3><p>An automatic soap dispenser developed for school hygiene programs.</p></div>
+      <div class="card"><h3>Sapo Herba Soap</h3><p>Herbal soap product with pure ingredients, launched regionally.</p></div>
+      <div class="card"><h3>Shopee Affiliate</h3><p>Led a team to drive affiliate sales campaigns on Shopee marketplace.</p></div>
+      <div class="card"><h3>TikTok Edu Content</h3><p>Created political education videos, achieving 10k+ views.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-info fade-in">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sirrulirsyad334@gmail.com">sirrulirsyad334@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6281217669086" target="_blank">+62 812-1766-9086</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/sirrulirsyad" target="_blank">@sirrulirsyad</a></p>
+    <form id="contact-form" action="mailto:sirrulirsyad334@gmail.com" method="post" enctype="text/plain" style="margin-top: 1rem;">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;" />
+      <br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;" />
+      <br />
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;"></textarea>
+      <br />
+      <button type="submit" style="background-color: #4a3fff; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; transition: transform 0.3s ease;">Send Message</button>
+    </form>
+  </section>
+  <style>
+    input[type="text"]:hover, input[type="email"]:hover, textarea:hover, button:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+
+  <footer>
+    &copy; 2025 Muhammad Sirrul Irsyad. All rights reserved.
+  </footer>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</body>
+</html>
